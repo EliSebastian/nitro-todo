@@ -1,2 +1,20 @@
 //https://nitro.unjs.io/config
-export default defineNitroConfig({});
+import { resolve } from 'path'
+export default defineNitroConfig({
+  alias: {
+    "@": resolve(__dirname, '.')
+  },
+  typescript: {
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        paths: {
+          "@": [
+            "./../.."
+          ],
+          "@/*": ["../../*"],
+        },
+      },
+    },
+  },
+})

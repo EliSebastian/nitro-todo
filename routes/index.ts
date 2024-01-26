@@ -1,3 +1,5 @@
+import { helloWorld } from "@/typeorm/index"
 export default eventHandler(() => {
-  return { nitro: 'Is Awesome!' }
+  helloWorld()
+  return { nitro: "Is Awesome!" }
 })
